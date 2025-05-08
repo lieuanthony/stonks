@@ -1,8 +1,9 @@
+import sys
+import pandas as pd
 import praw
 from praw import Reddit
-import sys
+
 from utils.constants import POST_FIELDS
-import pandas as pd
 
 def connect_reddit(client_id, client_secret, user_agent: str) -> Reddit:
     try: 

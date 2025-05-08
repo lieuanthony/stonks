@@ -16,3 +16,5 @@ POST_FIELDS = (
     'score',
     'upvote_ratio'
 )
+
+OUTPUT_PATH = '/opt/airflow/data/output'
