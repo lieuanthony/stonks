@@ -17,7 +17,7 @@ def connect_reddit(client_id, client_secret, user_agent: str) -> Reddit:
         print(e)
         sys.exit(1)
         
-def extract_posts(reddit_instance: Reddit, subreddit: str, time_filter: str, limit=None):
+def extract_posts(reddit_instance: Reddit, subreddit: str, time_filter: str, limit=None) -> list:
     subreddit = reddit_instance.subreddit(subreddit)
     posts = subreddit.top(time_filter=time_filter, limit=limit)
 
@@ -30,7 +30,7 @@ def extract_posts(reddit_instance: Reddit, subreddit: str, time_filter: str, lim
 
     return post_lists
 
-def transform_data(post_df: pd.DataFrame):
+def transform_data(post_df: pd.DataFrame) -> pd.DataFrame:
     post_df['id'] = post_df['id'].astype(str)
     post_df['subreddit'] = post_df['subreddit'].astype(str)
     post_df['title'] = post_df['title'].astype(str)
